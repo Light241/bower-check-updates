@@ -1,52 +1,55 @@
 {
-  "name": "npm-check-updates",
+  "name": "bower-check-updates",
   "version": "2.0.0-alpha.9",
-  "author": "Tomas Junnonen <tomas1@gmail.com>",
+  "authors": [
+    "Tomas Junnonen <tomas1@gmail.com>",
+    "Sergey Panfilov <se-panfilov@ya.ru>"
+  ],
   "description": "Find newer versions of dependencies than what your package.json allows",
   "keywords": [
-    "npm",
+    "bower",
     "check",
     "find",
     "discover",
     "updates",
     "upgrades",
     "dependencies",
-    "package.json",
+    "bower.json",
     "updater",
     "version",
     "management"
   ],
   "preferGlobal": true,
-  "main": "./lib/npm-check-updates",
+  "main": "./lib/bower-check-updates",
   "scripts": {
     "test": "mocha -t 10000"
   },
   "bin": {
-    "npm-check-updates": "./bin/npm-check-updates",
-    "ncu": "./bin/npm-check-updates"
+    "bower-check-updates": "./bin/bower-check-updates",
+    "bcu": "./bin/bower-check-updates"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjunnone/npm-check-updates.git"
+    "url": "https://github.com/light241/bower-check-updates.git"
   },
-  "homepage": "https://github.com/tjunnone/npm-check-updates",
+  "homepage": "https://github.com/light241/bower-check-updates",
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "^1.2.1",
     "bluebird": "^2.9.27",
     "cint": "^8.2.1",
-    "closest-package": "^1.0.0",
+    "closest-bower": "^1.1.1",
     "commander": "^2.8.1",
     "get-stdin-promise": "^0.1.1",
-    "lodash": "^3.2.0",
-    "npm": "^2.9.1",
-    "read-package-json": "^1.3.1",
-    "semver": "^4.3.4",
+    "lodash": "^3.9.3",
+    "npm": "^2.11.1",
+    "read-package-json": "^2.0.0",
+    "semver": "^4.3.6",
     "semver-utils": "metaraine/semver-utils.git#ff978"
   },
   "devDependencies": {
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
-    "mocha": "^2.2.4",
-    "should": "^5.0.0"
+    "mocha": "^2.2.5",
+    "should": "^6.0.3"
   }
 }
