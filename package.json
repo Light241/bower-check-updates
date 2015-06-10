@@ -1,7 +1,10 @@
 {
-  "name": "npm-check-updates",
+  "name": "bower-check-updates",
   "version": "2.0.0-alpha.9",
-  "author": "Tomas Junnonen <tomas1@gmail.com>",
+  "authors": [
+    "Tomas Junnonen <tomas1@gmail.com>",
+    "Sergey Panfilov <se-panfilov@ya.ru>"
+  ],
   "description": "Find newer versions of dependencies than what your package.json allows",
   "keywords": [
     "npm",
@@ -17,19 +20,19 @@
     "management"
   ],
   "preferGlobal": true,
-  "main": "./lib/npm-check-updates",
+  "main": "./lib/bower-check-updates",
   "scripts": {
     "test": "mocha -t 10000"
   },
   "bin": {
-    "npm-check-updates": "./bin/npm-check-updates",
-    "ncu": "./bin/npm-check-updates"
+    "bower-check-updates": "./bin/bower-check-updates",
+    "bcu": "./bin/bower-check-updates"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjunnone/npm-check-updates.git"
+    "url": "https://github.com/light241/bower-check-updates.git"
   },
-  "homepage": "https://github.com/tjunnone/npm-check-updates",
+  "homepage": "https://github.com/light241/bower-check-updates",
   "dependencies": {
     "async": "^0.9.0",
     "bluebird": "^2.9.27",
