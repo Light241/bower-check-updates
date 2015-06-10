@@ -3,15 +3,21 @@
 [![Dependency Status](https://david-dm.org/light241/bower-check-updates.svg)](https://david-dm.org/light241/bower-check-updates) 
 [![devDependency Status](https://david-dm.org/light241/bower-check-updates/dev-status.svg)](https://david-dm.org/light241/bower-check-updates#info=devDependencies) 
 
-bower-check-updates is a command-line tool that allows you to **find the latest versions of dependencies**, regardless of any version
-constraints in your package.json file (unlike npm itself).
+#What?
+`bower-check-updates` - is totally clone of [npm-check-updates][1], but it updates bower.json dependencies (npm-check-updates updates nodejs's package.json).
 
-bower-check-updates can optionally upgrade your package.json file to
+All the code is writed by [tjunnone][2]. I'm just rename `package.json` to `bower.json` (and add [closest-bower][3] module instead of [closest-package][4]). So if u want to contribute - better do it to `npm-check-updates`, and i'm merge the changes (notify me if i'm not).
+
+#bower-check-updates
+
+`bower-check-updates` is a command-line tool that allows you to **find the latest versions of dependencies**, regardless of any version constraints in your `bower.json` file.
+
+`bower-check-updates` can optionally upgrade your `bower.json` file to
 use the latest available versions, all while **maintaining your
 existing semantic versioning policies**.
 
-Put plainly, it will upgrade your `"express": "^4.11.2"` dependency to
-`"express": "^5.0.0"` when express 5.0.0 is released.
+Put plainly, it will upgrade your `"codemirror": "^4.0.0"` dependency to
+`"codemirror": "^5.0.0"` when express 5.0.0 is released.
 
 Installation
 --------------
@@ -31,37 +37,37 @@ Usage
 
 Show any new dependencies for the project in the current directory:
 ```sh
-$ ncu
+$ bcu
 
-"connect" can be updated from ^2.8.0 to ^2.11.0  (Installed: 2.8.8, Latest: 2.11.0)
-"commander" can be updated from ^1.3.0 to ^2.0.0 (Installed: 1.3.2, Latest: 2.0.0)
+"bootstrap" can be updated from ^2.8.0 to ^2.11.0  (Installed: 2.8.8, Latest: 2.11.0)
+"angular" can be updated from ^1.3.0 to ^2.0.0 (Installed: 1.3.2, Latest: 2.0.0)
 
-Run with '-u' to upgrade your package.json
+Run with '-u' to upgrade your bower.json
 ```
 
-Upgrade a project's package.json:
+Upgrade a project's bower.json:
 
-> **Make sure your package.json is in version control and all changes have been committed. This *will* overwrite your package.json.**
+> **Make sure your bower.json is in version control and all changes have been committed. This *will* overwrite your bower.json.**
 
 ```sh
-$ ncu -u
+$ bcu -u
 
-"request" can be updated from ^2.20.0 to ^2.27.0 (Installed: 2.20.0, Latest: 2.27.1)
+"bootstrap" can be updated from ^3.0.0 to ^3.3.0 (Installed: 3.0.0, Latest: 3.30.4)
 
-package.json upgraded
+bower.json upgraded
 ```
 
 Filter by package name:
 ```sh
 # match mocha and should packages exactly
-$ ncu -f mocha,should         
+$ bcu -f mocha,should         
 
 # match packages that start with "gulp-" using regex
-$ ncu -f /^gulp-/             
+$ bcu -f /^gulp-/             
 
 # match packages that do not start with "gulp-". Note: single quotes are required 
 # here to avoid inadvertant bash parsing
-$ ncu -f '/^(?!gulp-).*$/'    
+$ bcu -f '/^(?!gulp-).*$/'    
 ```
 
 Options
@@ -88,50 +94,6 @@ Options
                              versions (maintaining existing policy)
     -V, --version            output the version number
 
-
-Motivation
---------------
-
-[Package.json best practices](http://blog.nodejitsu.com/package-dependencies-done-right) recommends maintaining dependencies using a [semantic versioning](http://semver.org/) policy. In practice you do this by specifying a "^1.2.0" style dependency in your package.json, whereby patch- and minor-level updates are automatically allowed but major releases require manual verification.
-
-Unfortunately, it then becomes your responsibility to find out about new
-package releases, for example by using "npm info" command one package at a time, or by visiting project pages.
-
-
-History
---------------
-
-- *2.0.0-alpha.7*
-  - Bug fixes and refactoring
-- *2.0.0-alpha5*
-  - Add -e/--error-level option
-- *2.0.0-alpha4*
-  - Add -t/--greatest option to search for the highest versions instead of the default latest stable versions.
-- *2.0.0-alpha3*
-  - Automatically look for the closest descendant package.json if not found in current directory
-- *2.0.0-alpha1*
-  - Do not downgrade packages
-- 1.5.1
-  - Fix bug where package names got truncated (grunt-concurrent -> grunt)
-- 1.5
-  - Add prod and dev only options
-- 1.4
-  - Add package filtering option
-  - Add mocha as npm test script
-- 1.3
-  - Handle private packages and NPM errors
-  - Added Mocha tests
-  - Bugfixes
-- 1.2
-  - Print currently installed and latest package version in addition to semantic versions
-  - Fixed bug where extra whitespace in package.json may prevent automatic upgrade
-- 1.1
-  - Added option to check global packages for updates: -g switch
-  - Now also checks and upgrades devDependencies in package.json
-- 1.0
-  - Find and upgrade dependencies maintaining existing versioning policy in package.json
-
-How dependency updates are determined
 --------------
 
 - Direct dependencies will be increased to the latest stable version:
@@ -153,3 +115,8 @@ Problems?
 Please [file an issue on github](https://github.com/light241/bower-check-updates/issues).
 
 Pull requests are welcome :)
+
+[1]: https://github.com/tjunnone/npm-check-updates
+[2]: https://github.com/tjunnone
+[3]: https://github.com/Light241/closest-bower
+[4]: https://github.com/hughsk/closest-package
