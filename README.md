@@ -1,12 +1,12 @@
-[![npm stable version](https://img.shields.io/npm/v/npm-check-updates.svg?label=stable)](https://npmjs.org/package/npm-check-updates) 
-[![npm unstable version](https://img.shields.io/github/tag/tjunnone/npm-check-updates.svg?label=unstable)](https://github.com/tjunnone/npm-check-updates/tags) 
-[![Dependency Status](https://david-dm.org/tjunnone/npm-check-updates.svg)](https://david-dm.org/tjunnone/npm-check-updates) 
-[![devDependency Status](https://david-dm.org/tjunnone/npm-check-updates/dev-status.svg)](https://david-dm.org/tjunnone/npm-check-updates#info=devDependencies) 
+[![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates) 
+[![npm unstable version](https://img.shields.io/github/tag/light241/bower-check-updates.svg?label=unstable)](https://github.com/light241/bower-check-updates/tags) 
+[![Dependency Status](https://david-dm.org/light241/bower-check-updates.svg)](https://david-dm.org/light241/bower-check-updates) 
+[![devDependency Status](https://david-dm.org/light241/bower-check-updates/dev-status.svg)](https://david-dm.org/light241/bower-check-updates#info=devDependencies) 
 
-npm-check-updates is a command-line tool that allows you to **find the latest versions of dependencies**, regardless of any version
+bower-check-updates is a command-line tool that allows you to **find the latest versions of dependencies**, regardless of any version
 constraints in your package.json file (unlike npm itself).
 
-npm-check-updates can optionally upgrade your package.json file to
+bower-check-updates can optionally upgrade your package.json file to
 use the latest available versions, all while **maintaining your
 existing semantic versioning policies**.
 
@@ -17,13 +17,13 @@ Installation
 --------------
 
 ```sh
-npm install -g npm-check-updates
+npm install -g bower-check-updates
 ```
 
 Please consider installing the unstable version to help test pre-release features. You may even find [some features](#history) you needed that are not yet in the stable version. 
 
 ```sh
-npm install -g npm-check-updates@unstable
+npm install -g bower-check-updates@unstable
 ```
 
 Usage
@@ -150,6 +150,6 @@ How dependency updates are determined
 Problems?
 --------------
 
-Please [file an issue on github](https://github.com/tjunnone/npm-check-updates/issues).
+Please [file an issue on github](https://github.com/light241/bower-check-updates/issues).
 
 Pull requests are welcome :)
