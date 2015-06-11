@@ -125,3 +125,7 @@ Pull requests are welcome :)
 [2]: https://github.com/tjunnone
 [3]: https://github.com/Light241/closest-bower
 [4]: https://github.com/hughsk/closest-package
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Light241/bower-check-updates/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
