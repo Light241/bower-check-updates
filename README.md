@@ -3,12 +3,14 @@
 [![Dependency Status](https://david-dm.org/light241/bower-check-updates.svg)](https://david-dm.org/light241/bower-check-updates) 
 [![devDependency Status](https://david-dm.org/light241/bower-check-updates/dev-status.svg)](https://david-dm.org/light241/bower-check-updates#info=devDependencies) 
 
-#What?
+What?
+--------------
 `bower-check-updates` - is totally clone of [npm-check-updates][1], but it updates bower.json dependencies (npm-check-updates updates nodejs's package.json).
 
 All the code is writed by [tjunnone][2]. I'm just rename `package.json` to `bower.json` (and add [closest-bower][3] module instead of [closest-package][4]). So if u want to contribute - better do it to `npm-check-updates`, and i'm merge the changes (notify me if i'm not).
 
-#bower-check-updates
+bower-check-updates
+--------------
 
 `bower-check-updates` is a command-line tool that allows you to **find the latest versions of dependencies**, regardless of any version constraints in your `bower.json` file.
 
