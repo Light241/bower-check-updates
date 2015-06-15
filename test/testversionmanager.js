@@ -37,12 +37,12 @@ describe('Version manager', function () {
 
         it('should convert < to ^', function () {
             vm.upgradeDependencyDeclaration("<1.0", "1.1.0").should.equal("^1.1");
-        })
+        });
 
         it('should preserve > and >=', function () {
             vm.upgradeDependencyDeclaration(">1.0", "2.0.0").should.equal(">2.0");
             vm.upgradeDependencyDeclaration(">=1.0", "2.0.0").should.equal(">=2.0");
-        })
+        });
 
         it('should preserve ^ and ~', function () {
             vm.upgradeDependencyDeclaration("^1.2.3", "1.2.4").should.equal("^1.2.4");
@@ -95,10 +95,12 @@ describe('Version manager', function () {
     describe('upgradeDependencies', function() {
         it('should return upgraded dependencies object', function() {
             vm.upgradeDependencies({ mongodb: '^1.4.29' }, { mongodb: '1.4.30' }).should.eql({ mongodb: '^1.4.30' });
-        })
+        });
+
         it('should not downgrade', function() {
             vm.upgradeDependencies({ mongodb: '^2.0.7' }, { mongodb: '1.4.30' }).should.eql({ });
-        })
+        });
+
         it('should use the preferred wildcard when converting <, closed, or mixed ranges', function() {
             vm.upgradeDependencies({ a: '1.*', mongodb: '<1.0' }, { mongodb: '3.0.0' }).should.eql({ mongodb: '3.*' });
             vm.upgradeDependencies({ a: '1.x', mongodb: '<1.0' }, { mongodb: '3.0.0' }).should.eql({ mongodb: '3.x' });
@@ -107,7 +109,8 @@ describe('Version manager', function () {
 
             vm.upgradeDependencies({ a: '1.*', mongodb: '>1.0 <2.0' }, { mongodb: '3.0.0' }).should.eql({ mongodb: '3.*' });
             vm.upgradeDependencies({ mongodb: '>1.0 <2.*' }, { mongodb: '3.0.0' }).should.eql({ mongodb: '3.*' });
-        })
+        });
+
         it('should convert closed ranges to caret (^) when preferred wildcard is unknown', function() {
             vm.upgradeDependencies({ mongodb: '>1.0 <2.0' }, { mongodb: '3.0.0' }).should.eql({ mongodb: '^3.0' });
         })
@@ -122,28 +125,28 @@ describe('Version manager', function () {
 
     describe('getLatestPackageVersion', function () {
         return it('valid package info', function () {
-            return vm.getLatestPackageVersion("async")
+            return vm.getLatestPackageVersion("bootstrap")
                 .should.eventually.be.a('string');
         });
     });
 
     describe('getGreatestPackageVersion', function () {
         it('valid package info', function () {
-            return vm.getGreatestPackageVersion("async")
+            return vm.getGreatestPackageVersion("bootstrap")
                 .should.eventually.be.a('string');
         });
     });
 
     describe('getLatestVersions', function () {
         it('valid single package', function () {
-            var latestVersions = vm.getLatestVersions(["async"]);
-            return latestVersions.should.eventually.have.property('async');
+            var latestVersions = vm.getLatestVersions(["bootstrap"]);
+            return latestVersions.should.eventually.have.property('bootstrap');
         });
 
         it('valid packages', function () {
-            var latestVersions = vm.getLatestVersions(["async", "npm"])
-            latestVersions.should.eventually.have.property('async')
-            latestVersions.should.eventually.have.property('npm');
+            var latestVersions = vm.getLatestVersions(["bootstrap", "angular"]);
+            latestVersions.should.eventually.have.property('bootstrap');
+            latestVersions.should.eventually.have.property('angular');
             return latestVersions;
         });
 
@@ -153,17 +156,17 @@ describe('Version manager', function () {
         });
 
         it('set the versionTarget explicitly to latest', function () {
-            return vm.getLatestVersions(["async"], { versionTarget: 'latest' })
-                .should.eventually.have.property('async');
+            return vm.getLatestVersions(["bootstrap"], { versionTarget: 'latest' })
+                .should.eventually.have.property('bootstrap');
         });
 
         it('set the versionTarget to greatest', function () {
-            return vm.getLatestVersions(["async"], { versionTarget: 'greatest' })
-                .should.eventually.have.property('async');
+            return vm.getLatestVersions(["bootstrap"], { versionTarget: 'greatest' })
+                .should.eventually.have.property('bootstrap');
         });
 
         it('should return an error for an unsupported versionTarget', function () {
-            var a = vm.getLatestVersions(["async"], { versionTarget: 'foo' })
+            var a = vm.getLatestVersions(["bootstrap"], { versionTarget: 'foo' });
             return a.should.be.rejected;
         });
 
@@ -189,51 +192,51 @@ describe('Version manager', function () {
 
         it('should identify ^ when it is preferred', function() {
             var deps = {
-                async: '^0.9.0',
+                bootstrap: '^0.9.0',
                 bluebird: '^2.9.27',
                 cint: '^8.2.1',
                 commander: '~2.8.1',
-                lodash: '^3.2.0',
+                lodash: '^3.2.0'
             };
             vm.getPreferredWildcard(deps).should.equal('^');
         });
 
         it('should identify ~ when it is preferred', function() {
             var deps = {
-                async: '~0.9.0',
+                bootstrap: '~3.0.0',
                 bluebird: '~2.9.27',
                 cint: '^8.2.1',
                 commander: '~2.8.1',
-                lodash: '^3.2.0',
+                lodash: '^3.2.0'
             };
             vm.getPreferredWildcard(deps).should.equal('~');
         });
 
         it('should identify .x when it is preferred', function() {
             var deps = {
-                async: '0.9.x',
+                bootstrap: '3.0.x',
                 bluebird: '2.9.x',
                 cint: '^8.2.1',
                 commander: '~2.8.1',
-                lodash: '3.x',
+                lodash: '3.x'
             };
             vm.getPreferredWildcard(deps).should.equal('.x');
         });
 
         it('should identify .* when it is preferred', function() {
             var deps = {
-                async: '0.9.*',
+                bootstrap: '3.0.*',
                 bluebird: '2.9.*',
                 cint: '^8.2.1',
                 commander: '~2.8.1',
-                lodash: '3.*',
+                lodash: '3.*'
             };
             vm.getPreferredWildcard(deps).should.equal('.*');
         });
 
         it('should use the first wildcard if there is a tie', function() {
             var deps = {
-                async: '0.9.x',
+                bootstrap: '3.0.x',
                 commander: '2.8.*'
             };
             vm.getPreferredWildcard(deps).should.equal('.x');
@@ -241,9 +244,9 @@ describe('Version manager', function () {
 
         it('should default to caret (^) when cannot be determined from other dependencies', function() {
             var deps = {
-                async: '0.9.0',
+                bootstrap: '3.0.0',
                 commander: '2.8.1',
-                lodash: '3.2.0',
+                lodash: '3.2.0'
             };
             vm.getPreferredWildcard(deps).should.equal('^');
         });
