@@ -1,8 +1,8 @@
 [![npm version](https://badge.fury.io/js/bower-check-updates.svg)](http://badge.fury.io/js/bower-check-updates)
 [![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates) 
-[![Dependency Status](https://david-dm.org/light241/bower-check-updates.svg)](https://david-dm.org/light241/bower-check-updates) 
-[![devDependency Status](https://david-dm.org/light241/bower-check-updates/dev-status.svg)](https://david-dm.org/light241/bower-check-updates#info=devDependencies) 
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/Light241/bower-check-updates/blob/master/LICENSE)
+[![Dependency Status](https://david-dm.org/se-panfilov/bower-check-updates.svg)](https://david-dm.org/se-panfilov/bower-check-updates) 
+[![devDependency Status](https://david-dm.org/se-panfilov/bower-check-updates/dev-status.svg)](https://david-dm.org/se-panfilov/bower-check-updates#info=devDependencies) 
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/se-panfilov/bower-check-updates/blob/master/LICENSE)
 
 What?
 --------------
@@ -117,15 +117,15 @@ Options
 Problems?
 --------------
 
-Please [file an issue on github](https://github.com/light241/bower-check-updates/issues).
+Please [file an issue on github](https://github.com/se-panfilov/bower-check-updates/issues).
 
 Pull requests are welcome :)
 
 [1]: https://github.com/tjunnone/npm-check-updates
 [2]: https://github.com/tjunnone
-[3]: https://github.com/Light241/closest-bower
+[3]: https://github.com/se-panfilov/closest-bower
 [4]: https://github.com/hughsk/closest-package
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Light241/bower-check-updates/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/se-panfilov/bower-check-updates/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

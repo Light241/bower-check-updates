@@ -1,6 +1,6 @@
 {
   "name": "bower-check-updates",
-  "version": "2.0.0-alpha.12",
+  "version": "2.0.0-alpha.13",
   "authors": [
     "Tomas Junnonen <tomas1@gmail.com>",
     "Sergey Panfilov <se-panfilov@ya.ru> (https://se-panfilov.github.io)"
@@ -30,9 +30,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/light241/bower-check-updates.git"
+    "url": "https://github.com/se-panfilov/bower-check-updates.git"
   },
-  "homepage": "https://github.com/light241/bower-check-updates",
+  "homepage": "https://github.com/se-panfilov/bower-check-updates",
   "dependencies": {
     "async": "^1.2.1",
     "bluebird": "^2.9.27",
