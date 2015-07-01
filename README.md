@@ -8,7 +8,7 @@ What?
 --------------
 `bower-check-updates` - is totally clone of [npm-check-updates][1], but it updates bower.json dependencies (npm-check-updates updates nodejs's package.json).
 
-All the code is writed by [tjunnone][2]. I'm just rename `package.json` to `bower.json` (and add [closest-bower][3] module instead of [closest-package][4]). So if u want to contribute - better do it to `npm-check-updates`, and i'm merge the changes (notify me if i'm not).
+All the code is writed by [tjunnone][2]. I have just renamed `package.json` to `bower.json` (and added [closest-bower][3] module instead of [closest-package][4]). So if you want to contribute - better do it to `npm-check-updates`, and I'll merge the changes (notify me if I'm not).
 
 [![NPM](https://nodei.co/npm/bower-check-updates.png)](https://nodei.co/npm/bower-check-updates/)
 
@@ -22,7 +22,7 @@ use the latest available versions, all while **maintaining your
 existing semantic versioning policies**.
 
 Put plainly, it will upgrade your `"codemirror": "^4.0.0"` dependency to
-`"codemirror": "^5.0.0"` when express 5.0.0 is released.
+`"codemirror": "^5.0.0"` when codemirror 5.0.0 is released.
 
 Installation
 --------------
