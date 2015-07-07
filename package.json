@@ -1,6 +1,6 @@
 {
   "name": "bower-check-updates",
-  "version": "2.0.0-alpha.13",
+  "version": "2.0.0-alpha.14",
   "authors": [
     "Tomas Junnonen <tomas1@gmail.com>",
     "Sergey Panfilov <se-panfilov@ya.ru> (https://se-panfilov.github.io)"
@@ -34,14 +34,14 @@
   },
   "homepage": "https://github.com/se-panfilov/bower-check-updates",
   "dependencies": {
-    "async": "^1.2.1",
-    "bluebird": "^2.9.27",
+    "async": "^1.3.0",
+    "bluebird": "^2.9.32",
     "cint": "^8.2.1",
-    "closest-bower": "^1.1.1",
+    "closest-bower": "^1.1.4",
     "commander": "^2.8.1",
     "get-stdin-promise": "^0.1.1",
-    "lodash": "^3.9.3",
-    "npm": "^2.11.1",
+    "lodash": "^3.10.0",
+    "npm": "^2.12.1",
     "read-package-json": "^2.0.0",
     "semver": "^4.3.6",
     "semver-utils": "metaraine/semver-utils.git#ff978"
@@ -50,6 +50,6 @@
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
     "mocha": "^2.2.5",
-    "should": "^6.0.3"
+    "should": "^7.0.1"
   }
 }
