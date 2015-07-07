@@ -1,7 +1,10 @@
 {
   "name": "bower-check-updates",
   "version": "2.0.0-alpha.15",
-  "author": "Tomas Junnonen <tomas1@gmail.com>",
+  "authors": [
+    "Tomas Junnonen <tomas1@gmail.com>",
+    "Sergey Panfilov <se-panfilov@ya.ru> (https://se-panfilov.github.io)"
+  ],
   "license": "MIT",
   "contributors": [
     "Raine Lourie (http://github.com/metaraine)"
