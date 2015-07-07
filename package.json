@@ -1,9 +1,10 @@
 {
   "name": "bower-check-updates",
-  "version": "2.0.0-alpha.14",
-  "authors": [
-    "Tomas Junnonen <tomas1@gmail.com>",
-    "Sergey Panfilov <se-panfilov@ya.ru> (https://se-panfilov.github.io)"
+  "version": "2.0.0-alpha.15",
+  "author": "Tomas Junnonen <tomas1@gmail.com>",
+  "license": "MIT",
+  "contributors": [
+    "Raine Lourie (http://github.com/metaraine)"
   ],
   "description": "Find newer versions of dependencies than what your package.json allows",
   "keywords": [
