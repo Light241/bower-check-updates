@@ -34,7 +34,7 @@ npm install -g bower-check-updates
 Please consider installing the unstable version to help test pre-release features. You may even find [some features](#history) you needed that are not yet in the stable version. 
 
 ```sh
-npm install -g bower-check-updates@unstable
+npm install -g bower-check-updates@'~2.0.0-alpha'
 ```
 
 Important Notes about v2
