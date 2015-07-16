@@ -29,8 +29,8 @@
     "test": "mocha -t 10000"
   },
   "bin": {
-    "bower-check-updates": "./bin/bower-check-updates",
-    "bcu": "./bin/bower-check-updates"
+    "bower-check-updates": "./bin/old-alias",
+    "bcu": "./bin/npm-check-updates"
   },
   "repository": {
     "type": "git",

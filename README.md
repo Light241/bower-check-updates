@@ -41,7 +41,6 @@ Important Notes about v2
 --------------
 > *This documentation is for the upcoming v2 release, available on the `unstable` tag. It is recommended that you install the unstable branch using `npm install -g bower-check-updates@unstable` in preparation for v2. For documentation for the `stable` tag, please see [v1.5.1](https://github.com/tjunnone/bower-check-updates/tree/a7373782cb9623d44395eabf6382d6791749b16e). bower-check-updates v2 has a few important differences from v1:*
 
-- Newer published versions that satisfy the specified range are *not* upgraded by default (e.g. `1.0.0` to `1.1.0`). This change was made because `npm update` handles upgrades within the satisfied range just fine, and bower-check-updates is primarily intended to provide functionality not otherwise provided by npm itself. **For the old behavior, use the -f/--force option. Even better, [let me know](https://github.com/tjunnone/bower-check-updates/issues/94), with reasons, why you think the old behavior is better.**
 - Dependencies with less-than relations (e.g. `<1.0.0` or `<=1.2`) are converted to semantic wildcard relations (e.g. `^2.0.0` or `^2.0`). This change was made because if you are going to upgrade these to backwards-incompatible versions, the less-than contraint will no longer be relevant.
 - The command-line argument now specifies a package name filter (e.g. `bcu /^gulp-/`). For the old behavior (specifying an alternative package.json), you can pipe the package.json through stdin.
 - Use the easier-to-type `bcu` instead of `bower-check-updates`. `bower-check-updates` is preserved for backwards-compatibility.
@@ -92,8 +91,6 @@ Options
                              errors occur. 2: exits with error code 0 if no 
                              packages need updating (useful for continuous 
                              integration)
-    -f, --force              force upgrade even when the latest version satisfies
-                             the declared semver dependency
     -g, --global             check global packages instead of in the current project
     -j, --jsonAll            output new package.json instead of human-readable
                              message
@@ -105,6 +102,8 @@ Options
                              latest stable versions (alpha release only)
     -u, --upgrade            upgrade package.json dependencies to match latest 
                              versions (maintaining existing policy)
+    -ua, --upgradeAll        upgrade package.json dependencies even when the latest
+                             version satisfies the declared semver dependency
     -V, --version            output the version number
 
 Integration
@@ -115,8 +114,7 @@ The tool allows integration with 3rd party code:
 var checkUpdates = require('bower-check-updates');
 
 checkUpdates.run({
-    upgrade: true, // see available options above
-    force: true
+    upgrade: true // see available options above
 }).then(function() {
     console.log('done upgrading dependencies');
 });
@@ -137,6 +135,49 @@ How dependency updates are determined
   - \>0.2.0 => \>0.3.0
 - Closed ranges are replaced with a wildcard:
   - 1.0.0 \< 2.0.0 => ^3.0.0
+
+History
+--------------
+
+- *2.0.0-alpha.11*
+  - Export functionality to allow for programmatic use
+- *2.0.0-alpha.10*
+  - Move filter from command-line option to argument
+  - Add -f/--force option to force upgrades even when the latest version satisfies the declared semver dependency
+- *2.0.0-alpha.9*
+  - Refactoring
+- *2.0.0-alpha.8*
+  - Add ncu alias
+  - Allow specifying third-party registry with -r/--registry flag
+  - Replace callbacks with promises
+  - Replace < and <= with ^
+  - Add -j/--json and --jsonFlat flags for json output
+  - Full unit test coverage!
+- *2.0.0-alpha.7*
+  - Bug fixes and refactoring
+  - Add -e/--error-level option
+  - Add -t/--greatest option to search for the highest versions instead of the default latest stable versions.
+  - Automatically look for the closest descendant package.json if not found in current directory
+  - Do not downgrade packages
+- 1.5.1
+  - Fix bug where package names got truncated (grunt-concurrent -> grunt)
+- 1.5
+  - Add prod and dev only options
+- 1.4
+  - Add package filtering option
+  - Add mocha as npm test script
+- 1.3
+  - Handle private packages and NPM errors
+  - Added Mocha tests
+  - Bugfixes
+- 1.2
+  - Print currently installed and latest package version in addition to semantic versions
+  - Fixed bug where extra whitespace in package.json may prevent automatic upgrade
+- 1.1
+  - Added option to check global packages for updates: -g switch
+  - Now also checks and upgrades devDependencies in package.json
+- 1.0
+  - Find and upgrade dependencies maintaining existing versioning policy in package.json
 
 Problems?
 --------------
