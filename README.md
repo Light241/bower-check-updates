@@ -5,9 +5,9 @@
 
 What?
 --------------
-`bower-check-updates` - is totally clone of [bower-check-updates][1], but it updates bower.json dependencies (bower-check-updates updates nodejs's package.json).
+`bower-check-updates` - is totally clone of [npm-check-updates][1], but it updates bower.json dependencies (npm-check-updates updates nodejs's package.json).
 
-All the code is writed by [tjunnone][2]. I have just renamed `package.json` to `bower.json` (and added [closest-bower][3] module instead of [closest-package][4]). So if you want to contribute - better do it to `bower-check-updates`, and I'll merge the changes (notify me if I'm not).
+All the code is written by [tjunnone][2]. I have just renamed `package.json` to `bower.json` (and added [closest-bower][3] module instead of [closest-package][4]). So if you want to contribute - better do it to `npm-check-updates`, and I'll merge the changes (notify me if I'm not).
 
 [![NPM](https://nodei.co/npm/bower-check-updates.png)](https://nodei.co/npm/bower-check-updates/)
 
@@ -145,7 +145,7 @@ Please [file an issue on github](https://github.com/se-panfilov/bower-check-upda
 
 Pull requests are welcome :)
 
-[1]: https://github.com/tjunnone/bower-check-updates
+[1]: https://github.com/tjunnone/npm-check-updates
 [2]: https://github.com/tjunnone
 [3]: https://github.com/se-panfilov/closest-bower
 [4]: https://github.com/hughsk/closest-package
