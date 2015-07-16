@@ -9,7 +9,7 @@
   "contributors": [
     "Raine Lourie (http://github.com/metaraine)"
   ],
-  "description": "Find newer versions of dependencies than what your package.json allows",
+  "description": "Find newer versions of dependencies than what your bower.json allows",
   "keywords": [
     "bower",
     "check",

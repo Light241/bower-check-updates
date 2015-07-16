@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-console.log('You can now use "ncu" for less typing!');
+console.log('You can now use "bcu" for less typing!');
 
-require('./npm-check-updates');
+require('./bower-check-updates');
