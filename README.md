@@ -20,7 +20,7 @@ bower-check-updates
 use the latest available versions, all while **maintaining your
 existing semantic versioning policies**.
 
-bower-check-updates is a command-line tool that allows you to find and save the *latest* versions of dependencies, regardless of any version constraints in your package.json file (unlike npm itself).
+bower-check-updates is a command-line tool that allows you to find and save the *latest* versions of dependencies, regardless of any version constraints in your bower.json file (unlike npm itself).
 
 bower-check-updates *maintains your existing semantic versioning policies*, i.e., it will upgrade your `"express": "^4.11.2"` dependency to `"express": "^5.0.0"` when express 5.0.0 is released.
 
@@ -42,7 +42,7 @@ Important Notes about v2
 > *This documentation is for the upcoming v2 release, available on the `unstable` tag. It is recommended that you install the unstable branch using `npm install -g bower-check-updates@unstable` in preparation for v2. For documentation for the `stable` tag, please see [v1.5.1](https://github.com/tjunnone/bower-check-updates/tree/a7373782cb9623d44395eabf6382d6791749b16e). bower-check-updates v2 has a few important differences from v1:*
 
 - Dependencies with less-than relations (e.g. `<1.0.0` or `<=1.2`) are converted to semantic wildcard relations (e.g. `^2.0.0` or `^2.0`). This change was made because if you are going to upgrade these to backwards-incompatible versions, the less-than contraint will no longer be relevant.
-- The command-line argument now specifies a package name filter (e.g. `bcu /^gulp-/`). For the old behavior (specifying an alternative package.json), you can pipe the package.json through stdin.
+- The command-line argument now specifies a package name filter (e.g. `bcu /^gulp-/`). For the old behavior (specifying an alternative bower.json), you can pipe the bower.json through stdin.
 - Use the easier-to-type `bcu` instead of `bower-check-updates`. `bower-check-updates` is preserved for backwards-compatibility.
 
 Usage
@@ -92,7 +92,7 @@ Options
                              packages need updating (useful for continuous 
                              integration)
     -g, --global             check global packages instead of in the current project
-    -j, --jsonAll            output new package.json instead of human-readable
+    -j, --jsonAll            output new bower.json instead of human-readable
                              message
     --jsonUpgraded           output upgraded dependencies in json
     -p, --prod               check only dependencies (not devDependencies)
@@ -100,9 +100,9 @@ Options
     -s, --silent             don't output anything
     -t, --greatest           find the highest versions available instead of the 
                              latest stable versions (alpha release only)
-    -u, --upgrade            upgrade package.json dependencies to match latest 
+    -u, --upgrade            upgrade bower.json dependencies to match latest 
                              versions (maintaining existing policy)
-    -ua, --upgradeAll        upgrade package.json dependencies even when the latest
+    -ua, --upgradeAll        upgrade bower.json dependencies even when the latest
                              version satisfies the declared semver dependency
     -V, --version            output the version number
 

@@ -161,7 +161,7 @@ describe('versionmanager', function () {
             };
         });
 
-        it('should return an empty object for an empty package.json and handle default options', function () {
+        it('should return an empty object for an empty bower.json and handle default options', function () {
             vm.getCurrentDependencies().should.eql({});
             vm.getCurrentDependencies({}).should.eql({});
             vm.getCurrentDependencies({}, {}).should.eql({});
