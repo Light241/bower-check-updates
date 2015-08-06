@@ -1,6 +1,7 @@
 var vm = require("../lib/versionmanager");
 var chai = require("chai");
 var chaiAsPromised = require("chai-as-promised");
+var should = chai.should();
 
 chai.use(chaiAsPromised);
 
@@ -157,6 +158,9 @@ describe('versionmanager', function () {
                 },
                 devDependencies: {
                     lodash: '^3.9.3'
+                },
+                optionalDependencies: {
+                    chalk: '^1.1.0'
                 }
             };
         });
@@ -167,10 +171,11 @@ describe('versionmanager', function () {
             vm.getCurrentDependencies({}, {}).should.eql({});
         });
 
-        it('should get dependencies and devDependencies by default', function () {
+        it('should get dependencies, devDependencies, and optionalDependencies by default', function () {
             vm.getCurrentDependencies(deps).should.eql({
                 mocha: '1.2',
-                lodash: '^3.9.3'
+                lodash: '^3.9.3',
+                chalk: '^1.1.0'
             });
         });
 
@@ -183,6 +188,12 @@ describe('versionmanager', function () {
         it('should only get devDependencies when the dev option is true', function () {
             vm.getCurrentDependencies(deps, {dev: true}).should.eql({
                 lodash: '^3.9.3'
+            });
+        });
+
+        it('should only get optionalDependencies when the optional option is true', function () {
+            vm.getCurrentDependencies(deps, {optional: true}).should.eql({
+                chalk: '^1.1.0'
             });
         });
 
@@ -262,13 +273,15 @@ describe('versionmanager', function () {
     });
 
     describe('getLatestPackageVersion', function () {
-        return it('valid package info', function () {
+        this.timeout(30000);
+        it('valid package info', function () {
             return vm.getLatestPackageVersion("bootstrap")
                 .should.eventually.be.a('string');
         });
     });
 
     describe('getGreatestPackageVersion', function () {
+        this.timeout(30000);
         it('valid package info', function () {
             return vm.getGreatestPackageVersion("bootstrap")
                 .should.eventually.be.a('string');
@@ -393,13 +406,14 @@ describe('versionmanager', function () {
             vm.getPreferredWildcard(deps).should.equal('.x');
         });
 
-        it('should default to caret (^) when cannot be determined from other dependencies', function () {
+        it('should return null when it cannot be determined from other dependencies', function () {
             var deps = {
                 bootstrap: '3.0.0',
                 commander: '2.8.1',
                 lodash: '3.2.0'
             };
-            vm.getPreferredWildcard(deps).should.equal('^');
+            should.equal(vm.getPreferredWildcard(deps), null);
+            should.equal(vm.getPreferredWildcard({}), null);
         });
     });
 

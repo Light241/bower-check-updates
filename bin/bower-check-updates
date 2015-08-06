@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var program = require('commander'),
-    main = require('../lib/bower-check-updates');
+    bcu = require('../lib/bower-check-updates');
 
 program
     .version(require('../package').version)
@@ -13,13 +13,17 @@ program
     // program.json is set to true in programInit if any options that begin with 'json' are true
     .option('-j, --jsonAll', 'output new bower.json instead of human-readable message')
     .option('--jsonUpgraded', 'output upgraded dependencies in json')
+    .option('-o, --optional', 'check only optionalDependencies')
+    .option('--packageData', 'include stringified bower.json (use stdin instead)')
     .option('-p, --prod', 'check only dependencies (not devDependencies)')
     .option('-r, --registry <url>', 'specify third-party npm registry')
     .option('-s, --silent', "don't output anything")
     .option('-t, --greatest', "find the highest versions available instead of the latest stable versions")
     .option('-u, --upgrade', 'upgrade bower.json dependencies to match latest versions (maintaining existing policy)')
-    .option('-a, --upgradeAll', 'upgrade bower.json dependencies even when the latest version satisfies the declared semver dependency')
+    .option('-a, --upgradeAll', 'upgrade bower.json dependencies even when the latest version satisfies the declared semver dependency');
 
 program.parse(process.argv);
 
-main.run(program);
+program.cli = true;
+
+bcu.run(program);
