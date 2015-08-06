@@ -94,7 +94,7 @@ describe('versionmanager', function () {
 
     describe('updatePackageData', function () {
         var pkgData = JSON.stringify({
-            "name": "npm-check-updates",
+            "name": "bower-check-updates",
             "dependencies": {
                 "bluebird": "<2.0",
                 "bindings": "^1.1.0"
@@ -122,7 +122,7 @@ describe('versionmanager', function () {
         it('should upgrade the dependencies in the given package data (except for satisfied)', function () {
             JSON.parse(vm.updatePackageData(pkgData, oldDependencies, newDependencies, newVersions))
                 .should.eql({
-                    "name": "npm-check-updates",
+                    "name": "bower-check-updates",
                     "dependencies": {
                         "bluebird": "^2.9",
                         "bindings": "^1.1.0"
@@ -136,7 +136,7 @@ describe('versionmanager', function () {
         it('should upgrade the dependencies in the given package data (including satisfied)', function () {
             JSON.parse(vm.updatePackageData(pkgData, oldDependencies, newDependencies, newVersions, {upgradeAll: true}))
                 .should.eql({
-                    "name": "npm-check-updates",
+                    "name": "bower-check-updates",
                     "dependencies": {
                         "bluebird": "^2.9",
                         "bindings": "^1.2.1"

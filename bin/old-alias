@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 var chalk = require('chalk');
-console.log('You can now use ' + chalk.blue('ncu') + ' for less typing!');
+console.log('You can now use ' + chalk.blue('bcu') + ' for less typing!');
 
-require('./npm-check-updates');
+require('./bower-check-updates');
