@@ -1,4 +1,4 @@
-[![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates)
+<!-- [![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates) -->
 [![Dependency Status](https://david-dm.org/se-panfilov/bower-check-updates.svg)](https://david-dm.org/se-panfilov/bower-check-updates)
 [![devDependency Status](https://david-dm.org/se-panfilov/bower-check-updates/dev-status.svg)](https://david-dm.org/se-panfilov/bower-check-updates#info=devDependencies)
 <!-- [![npm unstable version](https://img.shields.io/github/tag/se-panfilov/bower-check-updates.svg?label=unstable)](https://github.com/se-panfilov/bower-check-updates/tags) -->
