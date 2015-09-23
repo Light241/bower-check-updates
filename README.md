@@ -1,6 +1,7 @@
-<!-- [![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates) -->
+<!--[![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates)-->
 [![Dependency Status](https://david-dm.org/se-panfilov/bower-check-updates.svg)](https://david-dm.org/se-panfilov/bower-check-updates)
 [![devDependency Status](https://david-dm.org/se-panfilov/bower-check-updates/dev-status.svg)](https://david-dm.org/se-panfilov/bower-check-updates#info=devDependencies)
+<!-- [![Build Status](https://travis-ci.org/tjunnone/npm-check-updates.svg)](https://travis-ci.org/tjunnone/npm-check-updates) -->
 <!-- [![npm unstable version](https://img.shields.io/github/tag/se-panfilov/bower-check-updates.svg?label=unstable)](https://github.com/se-panfilov/bower-check-updates/tags) -->
 
 bower-check-updates is a command-line tool that allows you to find and save the latest versions of dependencies, regardless of any version constraints in your bower.json file (unlike npm itself).
@@ -13,7 +14,7 @@ What?
 --------------
 `bower-check-updates` - is totally clone of [npm-check-updates][1], but it updates bower.json dependencies (bower-check-updates updates bower.json).
 
-All the code is written by [tjunnone][2]. I have just renamed `package.json` to `bower.json` (and added [closest-bower][3] module instead of [closest-package][4]). So if you want to contribute - better do it to `bower-check-updates`, and I'll merge the changes (notify me if I'm not).
+All the code is written by [tjunnone][2]. I have just renamed `bower.json` to `bower.json` (and added [closest-bower][3] module instead of [closest-package][4]). So if you want to contribute - better do it to `bower-check-updates`, and I'll merge the changes (notify me if I'm not).
 
 Installation
 --------------
@@ -76,6 +77,7 @@ Options
                              message
     --jsonUpgraded           output upgraded dependencies in json
     --packageData            include stringified bower.json (use stdin instead)
+    --packageFile            bower.json location (default: ./bower.json)
     -o, --optional           check only optionalDependencies
     -p, --prod               check only dependencies (not devDependencies)
     -r, --registry           specify third-party NPM registry
@@ -84,7 +86,7 @@ Options
                              latest stable versions (alpha release only)
     -u, --upgrade            upgrade bower.json dependencies to match latest 
                              versions (maintaining existing policy)
-    -ua, --upgradeAll        upgrade bower.json dependencies even when the latest
+    -a, --upgradeAll         upgrade bower.json dependencies even when the latest
                              version satisfies the declared semver dependency
     -V, --version            output the version number
 
@@ -96,7 +98,7 @@ The tool allows integration with 3rd party code:
 var bcu = require('bower-check-updates');
 
 bcu.run({
-    packageData: fs.readFileSync('./some/project/bower.json', 'utf-8'),
+    packageFile: 'bower.json',
     // Any command-line option can be specified here.
     // These are set by default:
     // silent: true,
@@ -110,17 +112,17 @@ How dependency updates are determined
 --------------
 
 - Direct dependencies will be increased to the latest stable version:
-  - 2.0.1 => 2.2.0
-  - 1.2 => 1.3
+  - `2.0.1` → `2.2.0`
+  - `1.2` → `1.3`
 -  Semantic versioning policies for levels are maintained while satisfying the latest version:
-  - ^1.2.0 => ^2.0.0
-  - 1.x => 2.x
+  - `^1.2.0` → `^2.0.0`
+  - `1.x` → `2.x`
 - "Any version" is maintained:
-  - \* => \*
+  - `*` → `*`
 - "Greater than" is maintained:
-  - \>0.2.0 => \>0.3.0
+  - `>0.2.0` → `>0.3.0`
 - Closed ranges are replaced with a wildcard:
-  - 1.0.0 \< 2.0.0 => ^3.0.0
+  - `1.0.0 < 2.0.0` → `^3.0.0`
 
 Problems?
 --------------

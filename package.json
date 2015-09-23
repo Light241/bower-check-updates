@@ -1,6 +1,6 @@
 {
   "name": "bower-check-updates",
-  "version": "2.1.0",
+  "version": "2.2.3",
   "authors": [
     "Tomas Junnonen <tomas1@gmail.com>",
     "Sergey Panfilov <se-panfilov@ya.ru> (https://se-panfilov.github.io)"
@@ -26,7 +26,8 @@
   "preferGlobal": true,
   "main": "./lib/bower-check-updates",
   "scripts": {
-    "test": "mocha"
+    "lint": "eslint bin lib",
+    "test": "npm run lint && mocha"
   },
   "bin": {
     "bower-check-updates": "./bin/old-alias",
@@ -38,7 +39,7 @@
   },
   "homepage": "https://github.com/se-panfilov/bower-check-updates",
   "dependencies": {
-    "async": "^1.4.0",
+    "async": "^1.4.1",
     "bluebird": "^2.9.34",
     "chalk": "^1.1.0",
     "cint": "^8.2.1",
@@ -47,15 +48,20 @@
     "commander": "^2.8.1",
     "fast-diff": "^1.0.1",
     "get-stdin-promise": "^0.1.1",
-    "lodash": "^3.10.0",
-    "npm": "^2.13.1",
+    "json-parse-helpfulerror": "^1.0.3",
+    "lodash": "^3.10.1",
+    "npm": "^3.3.3",
+    "pkg-up": "^1.0.0",
     "semver": "^5.0.1",
     "semver-utils": "metaraine/semver-utils.git#86ea225"
   },
   "devDependencies": {
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
+    "chai-string": "^1.1.2",
+    "eslint": "^1.1.0",
     "mocha": "^2.2.5",
-    "should": "^7.0.2"
+    "should": "^7.0.2",
+    "spawn-please": "^0.1.0"
   }
 }
