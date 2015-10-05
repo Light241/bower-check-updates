@@ -1,6 +1,10 @@
 # DEPRECATED: Please use [npm-check-updates](https://github.com/tjunnone/npm-check-updates)
+<!-- [![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates) -->
+[![Dependency Status](https://david-dm.org/se-panfilov/bower-check-updates.svg)](https://david-dm.org/se-panfilov/bower-check-updates)
+[![devDependency Status](https://david-dm.org/se-panfilov/bower-check-updates/dev-status.svg)](https://david-dm.org/se-panfilov/bower-check-updates#info=devDependencies)
+<!-- [![npm unstable version](https://img.shields.io/github/tag/se-panfilov/bower-check-updates.svg?label=unstable)](https://github.com/se-panfilov/bower-check-updates/tags) -->
 
-npm-check-updates supports bower as of v2.3.0
+`npm-check-updates` **supports bower** as of v2.3.0
 
 ```sh
 $ npm install -g npm-check-updates
@@ -8,11 +12,6 @@ $ npm-check-updates --packageManager bower   # or 'ncu -m bower' for short
 ```
 
 ---
-
-<!-- [![npm stable version](https://img.shields.io/npm/v/bower-check-updates.svg?label=stable)](https://npmjs.org/package/bower-check-updates) -->
-[![Dependency Status](https://david-dm.org/se-panfilov/bower-check-updates.svg)](https://david-dm.org/se-panfilov/bower-check-updates)
-[![devDependency Status](https://david-dm.org/se-panfilov/bower-check-updates/dev-status.svg)](https://david-dm.org/se-panfilov/bower-check-updates#info=devDependencies)
-<!-- [![npm unstable version](https://img.shields.io/github/tag/se-panfilov/bower-check-updates.svg?label=unstable)](https://github.com/se-panfilov/bower-check-updates/tags) -->
 
 bower-check-updates is a command-line tool that allows you to find and save the latest versions of dependencies, regardless of any version constraints in your bower.json file (unlike npm itself).
 
