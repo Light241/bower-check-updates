@@ -141,6 +141,17 @@ Always include your bower.json when reporting a bug!
 
 Pull requests are welcome, and will not collect dust :)
 
+## Legal Disclaimer
+
+This project is provided "as is", without warranty of any kind. The authors and contributors disclaim all liability for any damages arising from its use, inability to use, or performance. Users are responsible for ensuring compliance with applicable laws and regulations in their jurisdiction, including but not limited to:
+
+- European Union: Cyber Resilience Act (CRA) and Artificial Intelligence Act (AI Act)
+- United States: Uniform Commercial Code (UCC) and Export Administration Regulations (EAR)
+- China: Cybersecurity Law
+- India: Information Technology Act
+
+For details, see the full [DISCLAIMER.md](DISCLAIMER.md) file.
+
 [1]: https://github.com/tjunnone/npm-check-updates
 [2]: https://github.com/tjunnone
 [3]: https://github.com/se-panfilov/closest-bower
